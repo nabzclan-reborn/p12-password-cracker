@@ -47,7 +47,6 @@ else:
     exit()
 
 # REQUIRED
-token_type = "1" # token type :  https://support.api-aries.online/hc/articles/1/3/13/p12-password-cracker#token-types-required
 api_key = "1111-1111-111"  #API Token : https://support.api-aries.online/hc/articles/1/3/13/p12-password-cracker
 
 url = password_option if (args.list or args.single or args.default) else ""

@@ -7,8 +7,7 @@ init(autoreset=True)
 
 def crack_p12_password(url, token_type, api_key):
     headers = {
-        'Type': token_type,
-        'APITOKEN': api_key
+        'APITOKEN': api_key,
     }
 
     try:

@@ -5,7 +5,7 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)
 
-def crack_p12_password(url, token_type, api_key):
+def crack_p12_password(url, api_key):
     headers = {
         'APITOKEN': api_key,
     }
@@ -51,4 +51,4 @@ api_key = "1111-1111-111"  #API Token : https://support.api-aries.online/hc/arti
 
 url = password_option if (args.list or args.single or args.default) else ""
 
-crack_p12_password(url, token_type, api_key)
+crack_p12_password(url, api_key)

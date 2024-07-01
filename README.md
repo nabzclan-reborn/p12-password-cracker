@@ -23,6 +23,11 @@ V1.3:
 
 https://support.api-aries.online/hc/articles/1/3/13/p12-password-cracker
 
+# NEW
+Try our online p12 cracker: https://tools.nabzclan.vip
+
+Try our online p12 password changer: https://tools.nabzclan.vip
+
 
 
 

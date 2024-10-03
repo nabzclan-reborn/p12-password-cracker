@@ -3,7 +3,7 @@ p12 password cracker using a free api
 
 # install python packages
 
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # run script
 
@@ -24,6 +24,8 @@ V1.3:
 https://support.api-aries.online/hc/articles/1/3/13/p12-password-cracker
 
 # NEW
+Try our online p12 cracker Advanced: https://tools.nabzclan.vip
+
 Try our online p12 cracker: https://tools.nabzclan.vip
 
 Try our online p12 password changer: https://tools.nabzclan.vip

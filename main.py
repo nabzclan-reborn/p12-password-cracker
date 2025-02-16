@@ -34,11 +34,11 @@ args = parser.parse_args()
 p12_file_url = "https://cloud.nabzclan.vip/file/2Tw/Sunshine_Insurance_Group_Co.p12"  #sample direct file download url using https://cloud.nabzclan.vip 
 
 if args.single:
-   password_option = f"https://api.api-aries.online/v2/cracking/p12-password/?p12={p12_file_url}&password={args.single}"
+   password_option = f"https://api.api-aries.com/v2/cracking/p12-password/?p12={p12_file_url}&password={args.single}"
 elif args.list:
-    password_option = f"https://api.api-aries.online/v2/cracking/p12-password/?p12={p12_file_url}&list={args.list}"
+    password_option = f"https://api.api-aries.com/v2/cracking/p12-password/?p12={p12_file_url}&list={args.list}"
 elif args.default:
-    password_option = f"https://api.api-aries.online/v2/cracking/p12-password/?p12={p12_file_url}"
+    password_option = f"https://api.api-aries.com/v2/cracking/p12-password/?p12={p12_file_url}"
 else:
     print(Fore.RED + "Please provide an option:")
     print("  -s, --single PASSWORD\t\tUse a single password - Example: python3 main.py -s password here")
@@ -47,7 +47,7 @@ else:
     exit()
 
 # REQUIRED
-api_key = "1111-1111-111"  #API Token : https://support.api-aries.online/hc/articles/1/3/13/p12-password-cracker
+api_key = "1111-1111-111"  #API Token : https://support.api-aries.com/hc/articles/1/3/13/p12-password-cracker
 
 url = password_option if (args.list or args.single or args.default) else ""
 

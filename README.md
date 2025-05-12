@@ -2,7 +2,7 @@
 
 A powerful tool for cracking and changing passwords for P12/PKCS#12 certificate files using the API-Aries service.
 
-![Version](https://img.shields.io/badge/version-1.3-blue)
+![Version](https://img.shields.io/badge/version-1.4-blue)
 ![Python](https://img.shields.io/badge/python-3.6%2B-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
@@ -10,11 +10,9 @@ A powerful tool for cracking and changing passwords for P12/PKCS#12 certificate 
 
 - **Crack P12 Passwords** using:
   - Single password attempt
-  - Custom wordlist from a URL
-  - Default wordlist with 20+ million passwords
-- **Change P12 Passwords** once found
-- **Colorful Interface** with progress information
-- **Simple & Advanced Modes** for different use cases
+  - Custom wordlist (local file or URL)
+- **Change P12 Passwords** once found or with known password
+- **Automatic local file upload** for processing without having to get your own link to add to api aries.
 
 ## Installation
 ```bash
@@ -30,37 +28,32 @@ pip3 install -r requirements.txt
 
 Before using the tool, configure your API key in one of the following ways:
 - Edit the script and replace `YOUR_API_KEY_HERE` with your actual API key - Get Key 'https://api-aries.com/dashboard'
-- Use the `-k` or `--key` option when running the script
 
 ## Usage Examples
 
-### Quick Usage (Default Wordlist)
-
-```bash
-# Simplest way to use - just provide the P12 URL
-python3 p12_tool.py https://example.com/certificate.p12
-```
-
-### Advanced Usage
-
 ```bash
 # Try a single password
-python3 p12_tool.py crack -p https://example.com/certificate.p12 -s "password123"
+python3 main.py crack -p cert.p12 -s "password123"
 
-# Use a custom wordlist from URL
-python3 p12_tool.py crack -p https://example.com/certificate.p12 -l https://example.com/wordlist.txt
+# Use a local wordlist file
+python3 main.py crack -p cert.p12 -l wordlist.txt
 
-# Use default wordlist (20+ million passwords)
-python3 p12_tool.py crack -p https://example.com/certificate.p12 -d
+# Use a wordlist from URL
+python3 main.py crack -p cert.p12 -l https://example.com/wordlist.txt
 
 # Crack password and then change it
-python3 p12_tool.py crack -p https://example.com/certificate.p12 -d -c "newpassword123"
+python3 main.py crack -p cert.p12 -s "password123" -c "newpassword123"
 
 # Change password (when you know the current password)
-python3 p12_tool.py change -p https://example.com/certificate.p12 -o "oldpassword" -n "newpassword"
+python3 main.py change -p cert.p12 -o "oldpassword" -n "newpassword"
 ```
 
 ## Changelog
+
+### v1.4
+- Removed default wordlist feature
+- Eliminated the requirement for a direct P12 download link - the system now handles file management automatically via naqbzclan cdn server and stores P12 files for only 2 hours
+- Rewrote several features for improved performance
 
 ### v1.3
 - API update with enhanced capabilities

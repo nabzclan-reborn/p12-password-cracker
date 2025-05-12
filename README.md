@@ -52,7 +52,7 @@ python3 main.py change -p cert.p12 -o "oldpassword" -n "newpassword"
 
 ### v1.4
 - Removed default wordlist feature
-- Eliminated the requirement for a direct P12 download link - the system now handles file management automatically via naqbzclan cdn server and stores P12 files for only 2 hours
+- Eliminated the requirement for a direct P12 download link - the system now handles file management automatically via nabz clan cdn server and stores P12 files for only 2 hours
 - Rewrote several features for improved performance
 
 ### v1.3

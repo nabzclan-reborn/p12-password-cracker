@@ -48,6 +48,16 @@ python3 main.py crack -p certificate_test.p12 -s "password123" -c "newpassword12
 python3 main.py change -p certificate_test.p12 -o "oldpassword" -n "newpassword"
 ```
 
+## running UI Usage Examples
+
+```bash
+
+# make sure to have your api key on main.py before using this 
+
+# running command to start up GUI - UI version of the p12 cracker tool 
+python3 run_gui.py
+```
+
 ## Changelog
 
 ### v1.4

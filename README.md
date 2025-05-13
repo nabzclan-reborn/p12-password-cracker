@@ -33,19 +33,19 @@ Before using the tool, configure your API key in one of the following ways:
 
 ```bash
 # Try a single password
-python3 main.py crack -p cert.p12 -s "password123"
+python3 main.py crack -p certificate_test.p12 -s "password123"
 
 # Use a local wordlist file
-python3 main.py crack -p cert.p12 -l wordlist.txt
+python3 main.py crack -p certificate_test.p12 -l wordlist.txt
 
 # Use a wordlist from URL
-python3 main.py crack -p cert.p12 -l https://example.com/wordlist.txt
+python3 main.py crack -p certificate_test.p12 -l https://example.com/wordlist.txt
 
 # Crack password and then change it
-python3 main.py crack -p cert.p12 -s "password123" -c "newpassword123"
+python3 main.py crack -p certificate_test.p12 -s "password123" -c "newpassword123"
 
 # Change password (when you know the current password)
-python3 main.py change -p cert.p12 -o "oldpassword" -n "newpassword"
+python3 main.py change -p certificate_test.p12 -o "oldpassword" -n "newpassword"
 ```
 
 ## Changelog

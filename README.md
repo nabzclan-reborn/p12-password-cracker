@@ -48,7 +48,7 @@ python3 main.py crack -p certificate_test.p12 -s "password123" -c "newpassword12
 python3 main.py change -p certificate_test.p12 -o "oldpassword" -n "newpassword"
 ```
 
-## running UI Usage Examples
+## running UI - Usage Examples & Setup
 
 ```bash
 # Install required dependencies

@@ -51,6 +51,8 @@ python3 main.py change -p certificate_test.p12 -o "oldpassword" -n "newpassword"
 ## running UI Usage Examples
 
 ```bash
+# Install required dependencies
+pip3 install -r requirements.txt
 
 # make sure to have your api key on main.py before using this 
 

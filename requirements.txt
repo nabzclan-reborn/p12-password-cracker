@@ -1,3 +1,10 @@
-argparse
-colorama
 requests
+colorama
+argparse
+pillow
+tk
+pycryptodome
+urllib3
+certifi
+charset-normalizer
+idna

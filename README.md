@@ -31,8 +31,8 @@ pip3 install -r requirements.txt
 ## Configuration
 
 Before using the tool, you must configure your API key:
-1. Open `main.py`
-2. Replace `YOUR_API_KEY_HERE` with your actual API key
+1. Rename `.env.example` to `.env`
+2. Open `.env` and replace `YOUR_API_KEY_HERE` with your actual API key
 3. You can get your key at: https://developer.nabzclan.vip/dashboard/tokens
 
 ## Usage Examples
@@ -89,7 +89,7 @@ python3 run_gui.py
 
 ## Changelog
 
-### v2.0 - 9 days working on it - today 8 hours
+### v2.0 - 9 days working on it - today 8 hours - [Release Thread](https://nabzclan.vip/threads/p12cracker-v2-0-script-github-01-04-2026-update.159/)
 - Migrated to Nabzclan Developer API for higher performance and reliability
 - Added Brute Force mode (VIP) with custom charset and length options
 - Added Smart Mode for intelligent password guessing

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P12 Cracker 2.0// NABZCLAN</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="particles"></div>
+
+    <div class="app-container">
+        <!-- Sidebar / Header -->
+        <header class="sidebar glass">
+            <div class="brand" style="flex-direction: column; align-items: flex-start; gap: 0rem;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <h1>P12<span class="highlight">CRACKER</span></h1>
+                    <span class="version">v2.0</span>
+                </div>
+                <small style="font-size: 0.8em; opacity: 0.8; letter-spacing: 1px;">by NABZCLAN</small>
+            </div>
+
+            <div class="user-profile glass-panel" id="user-profile">
+                <div class="loader-spinner"></div>
+                <!-- Dynamic Content -->
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-tab="crack">
+                    <i class="fa-solid fa-unlock-keyhole"></i> Crack
+                </button>
+                <button class="nav-btn" data-tab="change">
+                    <i class="fa-solid fa-rotate"></i> Change
+                </button>
+                <button class="nav-btn" data-tab="history">
+                    <i class="fa-solid fa-clock-rotate-left"></i> History
+                </button>
+            </nav>
+
+            <div class="status-panel glass-panel">
+                <div class="status-item">
+                    <span class="label">API Status</span>
+                    <span class="value online">ONLINE</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">System</span>
+                    <span class="value">READY</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Cracker View -->
+            <section id="crack-view" class="view active">
+                <div class="glass-card upload-zone" id="drop-zone">
+                    <div class="upload-content">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon floating"></i>
+                        <h2>Drop P12 File Here</h2>
+                        <p>or click to browse</p>
+                        <input type="file" id="file-input" accept=".p12,.pfx" hidden>
+                        <div class="file-info hidden" id="file-info">
+                            <i class="fa-solid fa-file-code"></i>
+                            <span class="filename">certificate.p12</span>
+                            <i class="fa-solid fa-xmark remove-file"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card controls-panel">
+                    <h3>Attack Mode</h3>
+                    <div class="mode-selector">
+                        <label class="mode-option">
+                            <input type="radio" name="attack-mode" value="smart" checked>
+                            <span class="mode-card">
+                                <i class="fa-solid fa-brain"></i>
+                                <span class="title">Smart</span>
+                                <span class="desc">use our default wordlist</span>
+                            </span>
+                        </label>
+                        <label class="mode-option">
+                            <input type="radio" name="attack-mode" value="dictionary">
+                            <span class="mode-card">
+                                <i class="fa-solid fa-book"></i>
+                                <span class="title">Dictionary</span>
+                                <span class="desc">Wordlist attack</span>
+                            </span>
+                        </label>
+                        <label class="mode-option" id="brute-option">
+                            <input type="radio" name="attack-mode" value="brute_force">
+                            <span class="mode-card">
+                                <i class="fa-solid fa-hammer"></i>
+                                <span class="title">Brute Force</span>
+                                <span class="desc">VIP Only ⭐️</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Mode Settings (Dynamic) -->
+                    <div class="settings-area" id="settings-area">
+                        <!-- Injected via JS based on mode -->
+                    </div>
+
+                    <div class="action-row" style="display: flex; gap: 10px;">
+                        <button class="action-btn glow-effect" id="start-btn" style="flex: 2;">
+                            <span>START CRACKING</span>
+                        </button>
+                        <button class="action-btn danger-btn" id="stop-btn"
+                            style="flex: 1; background: var(--danger); display: none;">
+                            <span>STOP</span>
+                            <i class="fa-solid fa-stop"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Change View -->
+            <section id="change-view" class="view hidden">
+                <div class="glass-card upload-zone" id="drop-zone-change">
+                    <div class="upload-content">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon floating"></i>
+                        <h2>Drop P12 File Here</h2>
+                        <p>to change password</p>
+                        <input type="file" id="file-input-change" accept=".p12,.pfx" hidden>
+                        <div class="file-info hidden" id="file-info-change">
+                            <i class="fa-solid fa-file-code"></i>
+                            <span class="filename">certificate.p12</span>
+                            <i class="fa-solid fa-xmark remove-file-change"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card controls-panel">
+                    <h3>Change Password</h3>
+
+                    <div class="setting-group">
+                        <label class="setting-label">Old Password</label>
+                        <div style="position: relative;">
+                            <input type="text" class="input-control" id="old-password" placeholder="Current Password">
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label">New Password</label>
+                        <div style="position: relative;">
+                            <input type="text" class="input-control" id="new-password" placeholder="New Password">
+                        </div>
+                    </div>
+
+                    <button class="action-btn glow-effect" id="change-btn">
+                        <span>CHANGE PASSWORD</span>
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Console / Terminal -->
+            <section class="console-section glass-card">
+                <div class="console-header">
+                    <i class="fa-solid fa-terminal"></i>
+                    <span>SYSTEM LOGS</span>
+                    <button class="clear-console"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="console-output" id="console-output">
+                    <div class="log-line system">[*] System initialized...</div>
+                    <div class="log-line system">[*] Waiting for input...</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal-overlay hidden" id="result-modal">
+        <div class="modal-card glass-card">
+            <div class="modal-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2 class="modal-title">Success!</h2>
+            <p class="modal-message">Password found successfully.</p>
+            <div class="modal-result hidden" id="modal-password-box">
+                <code>password123</code>
+                <button class="copy-btn" title="Copy"><i class="fa-regular fa-copy"></i></button>
+            </div>
+            <button class="action-btn modal-btn" id="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/app.js?v=2.2"></script>
+</body>
+
+</html>

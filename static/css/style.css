@@ -351,7 +351,6 @@ body {
 /* Console */
 .console-section {
     flex: 1;
-    /* Takes remaining height */
     display: flex;
     flex-direction: column;
     min-height: 200px;
